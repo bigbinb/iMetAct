@@ -42,7 +42,7 @@ MetGenes<- getMetGenes(network = MetNetwork,
                        eps = 1e-10,
                        norm = TRUE)
 ```
-### step3:  Prepare input file for ARACNe-AP and run ARACNe-AP to calculate metabolic enzyme regulatory network
+### step3:  Infer metabolic enzyme regulatory network
 This step first removes genes with weak associations with metabolism from the metabolic expression matrix. 
 The resulting metabolism-related expression matrix was then used to infer the metabolic enzyme regulatory network.
 We recommend using ARACNe-AP for inferring and constructing your own network.
