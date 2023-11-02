@@ -21,7 +21,7 @@ EA_res <- CalEnzymeActWithTCGAregulon(eset = eset,
 ## Proceed step by step
 
 ---
-### Step1: load data
+### Step1: Load data
 A total of three data are loaded, including: 
                       1. metabolism-related biological interaction network (including protein interactions, metabolism-related interactions); 
                       2. metabolite list;
