@@ -1,0 +1,14 @@
+---
+title: "iMETACTQuickStart"
+author: "Xianbing Wang"
+date: '2023-11-02'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+data(bcellViper, package="bcellViper")
+eset <- dset@assayData$exprs
+EA_res <- CalEnzymeActWithTCGAregulon(eset = eset,
+                            TCGAtype = 'HCC')
+```
+
