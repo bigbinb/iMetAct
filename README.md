@@ -21,7 +21,7 @@ EA_res <- CalEnzymeActWithTCGAregulon(eset = eset,
 ## Proceed step by step
 
 ---
-### step1: load data
+### Step1: load data
 A total of three data are loaded, including: 
                       1. metabolism-related biological interaction network (including protein interactions, metabolism-related interactions); 
                       2. metabolite list;
@@ -31,7 +31,7 @@ data(MetNetwork) # Alternatively, your metabolism-related network can be read
 data(metabolites) # metabolites
 data(MetabolicEnzymes) # Metabolic Enzymes
 ```
-### step2: Identify metabolism-related genes 
+### Step2: Identify metabolism-related genes 
 In this step, a restart random walk algorithm is used to simulate the flow of metabolic information on a large-scale metabolism-related biological network with metabolites as network seeds, and then identify metabolism-related genes.
 ```{r}
 MetGenes<- getMetGenes(network = MetNetwork,
@@ -42,7 +42,7 @@ MetGenes<- getMetGenes(network = MetNetwork,
                        eps = 1e-10,
                        norm = TRUE)
 ```
-### step3:  Infer metabolic enzyme regulatory network
+### Step3:  Infer metabolic enzyme regulatory network
 This step first removes genes with weak associations with metabolism from the metabolic expression matrix. 
 The resulting metabolism-related expression matrix was then used to infer the metabolic enzyme regulatory network.
 We recommend using ARACNe-AP for inferring and constructing your own network.
@@ -67,7 +67,7 @@ write.table(x = expression_filtered,
 
 
 ```
-### step4: Calculate enzyme activity 
+### Step4: Calculate enzyme activity 
 Finally, we inferred metabolic enzyme activities through viper's three-tailed enrichment analysis method.
 ```{r}
 # creat  metabolic enzyme regulatory network object from ARACNe-AP results
