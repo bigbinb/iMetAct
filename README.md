@@ -1,4 +1,4 @@
-# Introduction of iMETACT
+# Introduction of iMetAct
 Metabolic enzyme activity plays a critical role in regulating the rate of related metabolic reactions.
 However, assessing the activities of all relevant enzymes in metabolic pathways currently presents challenges due to the absence of efficient measurement methods. 
 To address these challenges, we have developed a computational workflow named iMetAct. You can also visit our web server **[iMetAct](http://www.imetact.com/)**.
