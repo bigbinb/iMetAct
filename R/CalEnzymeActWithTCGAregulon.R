@@ -9,9 +9,9 @@
 #'
 #' @examples
 CalEnzymeActWithTCGAregulon <- function(eset,
-                                        TCGAtype='HCC',...){
+                                        TCGAtype='LIHC',...){
 
-  data(list=paste('TCGA_regulon',TCGAtype,sep = '_'))
+  data(list=paste("TCGA_regulon","_",TCGAtype,".RData",sep = ""))
 
   EnzymeActivity <- CalEnzymeAct(eset = eset,
                                  regulon=regulon,...)

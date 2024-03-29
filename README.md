@@ -5,10 +5,18 @@ To address these challenges, we have developed a computational workflow named iM
 # Install
 ```{r}
 if (!requireNamespace("devtools", quietly = TRUE)) {
-  # 如果不存在，则安装 devtools 包
+  # if not have "devtools", install "devtools" first.
   install.packages("devtools")
 }
-devtools::install_github('bigbinb/iMETACT')
+devtools::install_github('xiaolab-xjtu/iMETACT')
+
+# install need packages
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("viper")
+install.packages("RANKS")
+install.packages("igraph")
 ```
 ## Quickly starts
 iMETACT quickly starts using the metabolic enzyme regulatory network pre-calculated based on TCGA RNA-seq data.
@@ -16,7 +24,7 @@ We have finish the TCGA 33 cancers metabolic network, you can calculated the spe
 ```
 eset <- read.csv('./ExpressionMatrix.csv',row.names = 1)# read your gene expression matrix
 EA_res <- CalEnzymeActWithTCGAregulon(eset = eset,
-                            TCGAtype = 'HCC') # cancer types in TCGA
+                            TCGAtype = 'LIHC') # cancer types in TCGA
 ```
 ## Proceed step by step
 
