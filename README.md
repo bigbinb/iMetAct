@@ -86,4 +86,4 @@ EnzymeActivity <- CalEnzymeAct(expression_filtered,
                                regulon)
 ```
 # Citations
-xxxxxx
+Wang B, Huang C, Liu X, Liu Z, Zhang Y, Zhao W, Xu Q, Ho PC, Xiao Z. iMetAct: An integrated systematic inference of metabolic activity for dissecting tumor metabolic preference and tumor-immune microenvironment. Cell Rep. 2025 Mar 6;44(3):115375. doi: 10.1016/j.celrep.2025.115375. Epub ahead of print. PMID: 40053454.
