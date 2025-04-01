@@ -4,7 +4,7 @@
 #' @param network a two-column data.frame representing metabolism-related biological network. This Networkincludes protein-protein interactions, metabolic enzymes-metabolic substrates, metabolic enzymes-metabolites, metabolites-metabolite receptors, metabolites-transporters
 #' @param metabolites a vector of strings representing metabolite molecules in a metabolism-related biological network
 #' @param filter.pct a filter threshold (def: 0.2). Filter out genes not related to metabolism.
-#' @param gamma restart parameter (def: 0.6)
+#' @param gamma restart parameter (def: 0.7)
 #' @param tmax maximum number of iterations (steps) (def: 1000)
 #' @param eps maximum allowed difference between the computed probabilities at the steady state (def. 1e-10)
 #' @param norm whether to normalize the adjacency matrix (def: TRUE)
@@ -18,14 +18,14 @@
 #' getMetGenes(network,
 #' metabolites,
 #' filter.pct=0.2,
-#' gamma = 0.6,
+#' gamma = 0.7,
 #' tmax = 1000,
 #' eps = 1e-10,
 #' norm = TRUE)
 getMetGenes <- function(network,
                         metabolites,
                         filter.pct=0.2,
-                        gamma = 0.6,
+                        gamma = 0.7,
                         tmax = 1000,
                         eps = 1e-10,
                         norm = TRUE){

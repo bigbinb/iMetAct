@@ -16,3 +16,4 @@ Imports:
     RANKS,
     viper
     
+LazyData: true
