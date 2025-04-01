@@ -101,7 +101,7 @@ iMetAct provides a comprehensive metabolic regulatory network integrating:
 > - Directed network format (source in first column, target in second column)
 > - Supports user customization: create new networks or extend existing ones
 
-## Step 1: Load Data
+## Step 1: Loading Data
 Three data components are required:
 1. Metabolism-related biological interaction network
 2. Metabolite list (optional)
@@ -113,7 +113,7 @@ data(MetabolicEnzymes)
 # Import and merge your custom network with:
 # MetNetwork <- rbind(MetNetwork, your_network)
 ```
-## Step 2: Identify Metabolism-Related Genes
+## Step 2: Network Propagation
 A restart random walk algorithm simulates metabolic information flow using metabolites as network seeds.
 
   **Parameters**:
@@ -132,7 +132,7 @@ MetGenes<- getMetGenes(network = MetNetwork,
                        eps = 1e-10,
                        norm = TRUE)
 ```
-## Step 3: Infer Metabolic Enzyme Regulatory Network
+## Step 3: Metabolic Regulon Construction
   1. Filters weakly associated genes from expression matrix
 
   2. Generates input for network inference
@@ -153,7 +153,7 @@ write.table(expression_filtered,
 Recommended Tool: ARACNe-AP
 **[ARACNe-AP](https://github.com/califano-lab/ARACNe-AP)** for network construction
 
-## Step4: Calculate Enzyme Activity 
+## Step4: iMetAct Score Calculation
 Uses VIPER's three-tailed enrichment analysis on inferred networks.
 ```{r}
 regulon <- CreatMetRegulon('ARACNeOutputFile.txt', expression_filtered)
@@ -188,7 +188,7 @@ write.table(expression_filtered,
 Recommended Tool: 
 **[ARACNe-AP](https://github.com/califano-lab/ARACNe-AP)**
 * Output files from this step will be used to construct your enzyme regulatory network.
-## Step 2: Calculate Enzyme Activity
+## Step 2: iMetAct Score Calculation
 The metabolic enzyme activities are inferred using VIPER's three-tailed enrichment analysis.
 ```{r}
 # Create regulatory network object
@@ -199,4 +199,4 @@ EnzymeActivity <- CalEnzymeAct(expression_filtered, regulon)
 ```
 
 # Citations
-Wang, Binxian et al. “iMetAct: An integrated systematic inference of metabolic activity for dissecting tumor metabolic preference and tumor-immune microenvironment.” Cell reports vol. 44,3 (2025): 115375.  **[doi:10.1016/j.celrep.2025.115375](https://www.cell.com/cell-reports/fulltext/S2211-1247(25)00146-9)**
+Wang, Binxian et al. “iMetAct: An integrated systematic inference of metabolic activity for dissecting tumor metabolic preference and tumor-immune microenvironment.” Cell Reports. 2025, 44(3): 115375.   **[doi:10.1016/j.celrep.2025.115375](https://www.cell.com/cell-reports/fulltext/S2211-1247(25)00146-9)**
