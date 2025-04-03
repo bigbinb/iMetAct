@@ -18,7 +18,7 @@ data(MetabolicEnzymes)
 MetGenes<- getMetGenes(network = MetNetwork,
                        metabolites = metabolites,
                        filter.pct=0.2,
-                       gamma = 0.6,
+                       gamma = 0.7,
                        tmax = 1000,
                        eps = 1e-10,
                        norm = TRUE)
@@ -26,16 +26,16 @@ MetGenes<- getMetGenes(network = MetNetwork,
 02 Prepare input file for ARACNe-AP ----------------------------------
 ```{r}
 # 02 Prepare input file for ARACNe-AP ----------------------------------
-expression <- read.csv('./ExpressionMatrix.csv',row.names = 1)
-expression <- as.matrix(expression)
+data(testExp)
+expression <- as.matrix(testExp)
 expression_filtered <- expression[rownames(expression)%in%MetGenes,]
 
 write.table(x = data.frame(regulon=MetabolicEnzymes),
-            './path to ARACNe/regulon.txt',
+            './path_to_ARACNe/regulon.txt',
             row.names = F,
             col.names = F)
 write.table(x = expression_filtered,
-            './path to ARACNe/Exp_matrix.txt',
+            './path_to_ARACNe/Exp_matrix.txt',
             row.names = T,
             col.names = T)
 # Run ARACNe-AP to construct GRNs
@@ -45,9 +45,10 @@ write.table(x = expression_filtered,
 03 Calculate enzyme activity ----------------------------------
 ```{r}
 # 03 Calculate enzyme activity ----------------------------------
-regulon <- CreatMetRegulon('ARACNeOutputFile.txt',
-                          expression_filtered)
+network <- read.table("network.txt",header = T)
+regulon <- CreatMetRegulon(network,
+                          testExp)
 
-EnzymeActivity <- CalEnzymeAct(expression_filtered,
-                               regulon)
+EnzymeActivity <- CalEnzymeAct(regulon,
+                               testExp)
 ```

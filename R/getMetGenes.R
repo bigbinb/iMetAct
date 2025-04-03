@@ -30,18 +30,18 @@ getMetGenes <- function(network,
                         eps = 1e-10,
                         norm = TRUE){
   message("Invert to igraph object...")
-  igraph_network <- graph_from_data_frame(network,directed = T)
-  ADJ = as_adjacency_matrix(igraph_network)
+  igraph_network <- igraph::graph_from_data_frame(network,directed = T)
+  ADJ = igraph::as_adjacency_matrix(igraph_network)
 
   message("Calculate the affinity score..")
-  AffM=RWR(ADJ%>%as.matrix(),
-           metabolites,
-           gamma = gamma,
-           tmax = tmax,
-           eps = eps,
-           norm = norm)
+  AffM=RANKS::RWR(as.matrix(ADJ),
+                  metabolites,
+                  gamma = gamma,
+                  tmax = tmax,
+                  eps = eps,
+                  norm = norm)
 
-  affscore <- AffM$p %>% as.data.frame()
+  affscore <- as.data.frame(AffM$p)
   affscore$genes <- rownames(affscore)
 
   select_genes <- affscore[affscore$. > quantile(affscore$.,filter.pct),]

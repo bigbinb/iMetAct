@@ -2,17 +2,24 @@
 % Please edit documentation in R/CalEnzymeActWithTCGAregulon.R
 \name{CalEnzymeActWithTCGAregulon}
 \alias{CalEnzymeActWithTCGAregulon}
-\title{CalEnzymeActWithTCGAregulon}
+\title{Title}
 \usage{
-CalEnzymeActWithTCGAregulon(eset, TCGAtype = "HCC", ...)
+CalEnzymeActWithTCGAregulon(eset, TCGAtype = "LIHC", ...)
 }
 \arguments{
 \item{eset}{a gene expression matrix with genes (probes) in rows and samples in columns}
 
-\item{TCGAtype}{Character string indicating cancer type(Def:HCC). Can be one of the following: "ACC","BLCA","BRCA","CESC","CHOL","COAD","DLBC","ESCA","GBM","HNSC","KICH","KIRC","KIRP","LAML","LGG","LIHC","LUAD","LUSC","MESO","OV","PAAD","PCPG","PRAD","READ","SARC","SKCM","STAD","TGCT","THCA","THYM","UCEC","UCS","UVM"}
+\item{TCGAtype}{Character string indicating cancer type(Def:LIHC). Can be one of the following: "ACC","BLCA","BRCA","CESC","CHOL","COAD","DLBC","ESCA","GBM","HNSC","KICH","KIRC","KIRP","LAML","LGG","LIHC","LUAD","LUSC","MESO","OV","PAAD","PCPG","PRAD","READ","SARC","SKCM","STAD","TGCT","THCA","THYM","UCEC","UCS","UVM"}
 
 \item{...}{... Parameters passed to viper}
 }
+\value{
+matrix of inferred activity for each regulator gene in the network across all samples
+}
 \description{
-CalEnzymeActWithTCGAregulon
+Title
+}
+\examples{
+data(testExp)
+enz_activity <- CalEnzymeActWithTCGAregulon(testExp, TCGAtype = "LIHC")
 }

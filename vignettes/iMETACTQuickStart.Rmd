@@ -1,14 +1,13 @@
 ---
-title: "iMETACTQuickStart"
-author: "Xianbing Wang"
-date: '2023-11-02'
+title: "iMetActQuickStart"
+author: "Binxian Wang"
+date: '2025-04-03'
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-data(bcellViper, package="bcellViper")
-eset <- dset@assayData$exprs
-EA_res <- CalEnzymeActWithTCGAregulon(eset = eset,
-                            TCGAtype = 'HCC')
+data(testExp)
+EA_res <- CalEnzymeActWithTCGAregulon(eset = as.matrix(testExp),
+                            TCGAtype = 'LIHC')
 ```
 

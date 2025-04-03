@@ -15,7 +15,7 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
   # if not have "devtools", install "devtools" first.
   install.packages("devtools")
 }
-devtools::install_github('xiaolab-xjtu/iMETACT')
+devtools::install_github('xiaolab-xjtu/iMetAct')
 ```
   # Three Options for Tumor Enzyme Activity Calculation
   ## 1. Pre-computed Network (Recommended for Fast Analysis) 

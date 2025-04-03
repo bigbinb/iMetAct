@@ -1,19 +1,17 @@
-Package: iMETACT
+Package: iMetAct
 Type: Package
 Title: Calculate metabolic enzyme activity
-Version: 0.1.0
-Author: Xianbing Wang
-Maintainer: The package maintainer <yourself@somewhere.net>
+Version: 1.0.0
+Author: Binxian Wang
+Maintainer: The package maintainer <binx24@sjtu.edu.cn>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.3.2
 Depends: R (>= 4.1.1)
 Imports: 
     igraph,
     RANKS,
     viper
-    
-LazyData: true

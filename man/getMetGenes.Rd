@@ -9,7 +9,7 @@ getMetGenes(
   network,
   metabolites,
   filter.pct = 0.2,
-  gamma = 0.6,
+  gamma = 0.7,
   tmax = 1000,
   eps = 1e-10,
   norm = TRUE
@@ -22,7 +22,7 @@ getMetGenes(
 
 \item{filter.pct}{a filter threshold (def: 0.2). Filter out genes not related to metabolism.}
 
-\item{gamma}{restart parameter (def: 0.6)}
+\item{gamma}{restart parameter (def: 0.7)}
 
 \item{tmax}{maximum number of iterations (steps) (def: 1000)}
 
@@ -43,7 +43,7 @@ data(metabolites)
 getMetGenes(network,
 metabolites,
 filter.pct=0.2,
-gamma = 0.6,
+gamma = 0.7,
 tmax = 1000,
 eps = 1e-10,
 norm = TRUE)
