@@ -156,8 +156,12 @@ Recommended Tool: ARACNe-AP
 ## Step4: iMetAct Score Calculation
 Uses VIPER's three-tailed enrichment analysis on inferred networks.
 ```{r}
-regulon <- CreatMetRegulon('ARACNeOutputFile.txt', expression_filtered)
-EnzymeActivity <- CalEnzymeAct(expression_filtered, regulon)
+# Create regulatory network object
+regulon <- CreatMetRegulon('network.txt', expression_filtered)
+
+# Compute enzyme activities
+EnzymeActivity <- CalEnzymeAct(regulon, expression_filtered)
+```
 ```
 # 3. Calculating User-Specific Tumor Enzyme Activity
 
@@ -192,10 +196,10 @@ Recommended Tool:
 The metabolic enzyme activities are inferred using VIPER's three-tailed enrichment analysis.
 ```{r}
 # Create regulatory network object
-regulon <- CreatMetRegulon('ARACNeOutputFile.txt', expression_filtered)
+regulon <- CreatMetRegulon('network.txt', expression_filtered)
 
 # Compute enzyme activities
-EnzymeActivity <- CalEnzymeAct(expression_filtered, regulon)
+EnzymeActivity <- CalEnzymeAct(regulon, expression_filtered)
 ```
 
 # Citations

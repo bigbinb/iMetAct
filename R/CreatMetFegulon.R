@@ -33,9 +33,13 @@ readAracne <- function(afile,format = c("3col",
 #'
 #' @examples
 CreatMetRegulon <- function(afile,eset){
-  regulon <- viper::aracne2regulon(afile=afile,
-                            eset = eset,
-                            format = "3col")
+  net <- read.table(afile,header = T)
+  net_sel <- net[,-4]
+  write.table(net_sel,"./sel_network.txt",row.names = F,col.names = F,quote = F,sep = "\t")
+  netdir <- "./sel_network.txt"
+  regulon <- viper::aracne2regulon(afile=netdir,
+                                   eset = eset,
+                                   format = "3col")
   regulon
 }
 
