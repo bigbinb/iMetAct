@@ -162,7 +162,7 @@ regulon <- CreatMetRegulon('network.txt', expression_filtered)
 # Compute enzyme activities
 EnzymeActivity <- CalEnzymeAct(regulon, expression_filtered)
 ```
-```
+
 # 3. Calculating User-Specific Tumor Enzyme Activity
 
 Unlike Method 2, this approach eliminates the need for *de novo* metabolic network construction. You only need to calculate the enzyme regulon network.
