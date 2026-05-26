@@ -1,7 +1,7 @@
 Package: iMetAct
 Type: Package
 Title: Calculate metabolic enzyme activity
-Version: 1.0.0
+Version: 1.0.1
 Author: Binxian Wang
 Maintainer: The package maintainer <binx24@sjtu.edu.cn>
 Description: An integrated framework that infers metabolic enzyme activity

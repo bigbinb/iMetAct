@@ -35,11 +35,11 @@ devtools::install_github("xiaolab-xjtu/iMetAct")
 To lock dependency versions for reproducibility, create an installation script:
 
 ```r
-# Pinned versions known to work with iMetAct 1.0.0
+# Pinned versions known to work with iMetAct 1.0.1
 install.packages("igraph", version = "2.3.1")
 BiocManager::install("viper", version = "1.46.0")
 install.packages("RANKS", version = "1.1")
-devtools::install_github("xiaolab-xjtu/iMetAct@v1.0.0")
+devtools::install_github("xiaolab-xjtu/iMetAct@v1.0.1")
 ```
 
 Alternatively, use `renv` to snapshot your environment:
