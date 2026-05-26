@@ -8,12 +8,17 @@
 #' @export
 #'
 #' @examples
-#' data(testExp)
-#' regulon <- readAracne('re_network.txt')
-readAracne <- function(afile,format = c("3col",
-                                        "adj")){
+#' data(network)
+#' nocol <- network[, -4]
+#' tmpfile <- tempfile(fileext = ".txt")
+#' write.table(nocol, tmpfile,
+#'             row.names = FALSE, col.names = FALSE,
+#'             quote = FALSE, sep = "\t")
+#' regulon <- readAracne(tmpfile)
+readAracne <- function(afile, format = c("3col", "adj")){
+  format <- match.arg(format)
   switch(format, adj = {
-    aracne <- readAracneAdj(afile)
+    aracne <- viper:::readAracneAdj(afile)
   }, `3col` = {
     tmp <- t(sapply(strsplit(readLines(afile), "\t"),
                     function(x) x[1:3]))
@@ -30,6 +35,7 @@ readAracne <- function(afile,format = c("3col",
 #'
 #' @return Regulon object
 #' @export
+#' @importFrom utils write.table
 #'
 #' @examples
 #' data(testExp)
@@ -37,9 +43,11 @@ readAracne <- function(afile,format = c("3col",
 #' regulon <- CreatMetRegulon(network, as.matrix(testExp))
 CreatMetRegulon <- function(afile,eset){
   net_sel <- afile[,-4]
-  write.table(net_sel,"./sel_network.txt",row.names = F,col.names = F,quote = F,sep = "\t")
-  netdir <- "./sel_network.txt"
-  regulon <- viper::aracne2regulon(afile=netdir,
+  netdir <- tempfile(fileext = ".txt")
+  write.table(net_sel, netdir,
+              row.names = FALSE, col.names = FALSE,
+              quote = FALSE, sep = "\t")
+  regulon <- viper::aracne2regulon(afile = netdir,
                                    eset = eset,
                                    format = "3col")
   regulon

@@ -3,7 +3,11 @@ title: "Calculate metabolic enzyme activity step by step"
 output:
   word_document: default
   html_document: default
-date: '2023-11-02'
+date: "2023-11-02"
+vignette: >
+  %\VignetteIndexEntry{Calculate metabolic enzyme activity step by step}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 00 load data ----------------------------------
 ```{r setup, include=FALSE}

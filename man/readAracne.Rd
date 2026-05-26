@@ -20,6 +20,11 @@ readAracne
 read ARACNe-AP results
 }
 \examples{
-data(testExp)
-regulon <- readAracne('re_network.txt')
+data(network)
+nocol <- network[, -4]
+tmpfile <- tempfile(fileext = ".txt")
+write.table(nocol, tmpfile,
+            row.names = FALSE, col.names = FALSE,
+            quote = FALSE, sep = "\t")
+regulon <- readAracne(tmpfile)
 }

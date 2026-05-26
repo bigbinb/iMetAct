@@ -11,8 +11,10 @@
 #'
 #' @return a vector
 #' @export
+#' @importFrom stats quantile
 #'
 #' @examples
+#' \dontrun{
 #' data(MetNetwork)
 #' data(metabolites)
 #' getMetGenes(network,
@@ -22,6 +24,7 @@
 #' tmax = 1000,
 #' eps = 1e-10,
 #' norm = TRUE)
+#' }
 getMetGenes <- function(network,
                         metabolites,
                         filter.pct=0.2,
@@ -44,7 +47,7 @@ getMetGenes <- function(network,
   affscore <- as.data.frame(AffM$p)
   affscore$genes <- rownames(affscore)
 
-  select_genes <- affscore[affscore$. > quantile(affscore$.,filter.pct),]
+  select_genes <- affscore[affscore$`AffM$p` > quantile(affscore$`AffM$p`,filter.pct),]
   select_genes <- select_genes$genes
   select_genes
 }

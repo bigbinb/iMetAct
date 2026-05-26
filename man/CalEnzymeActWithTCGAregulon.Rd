@@ -2,7 +2,7 @@
 % Please edit documentation in R/CalEnzymeActWithTCGAregulon.R
 \name{CalEnzymeActWithTCGAregulon}
 \alias{CalEnzymeActWithTCGAregulon}
-\title{Title}
+\title{CalEnzymeActWithTCGAregulon}
 \usage{
 CalEnzymeActWithTCGAregulon(eset, TCGAtype = "LIHC", ...)
 }
@@ -17,7 +17,7 @@ CalEnzymeActWithTCGAregulon(eset, TCGAtype = "LIHC", ...)
 matrix of inferred activity for each regulator gene in the network across all samples
 }
 \description{
-Title
+Calculate metabolic enzyme activity using pre-computed TCGA regulon networks
 }
 \examples{
 data(testExp)

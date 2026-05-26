@@ -1,8 +1,12 @@
 ---
-title: "iMetActQuickStart"
+title: "iMetAct Quick Start"
 author: "Binxian Wang"
-date: '2025-04-03'
+date: "2025-04-03"
 output: html_document
+vignette: >
+  %\VignetteIndexEntry{iMetAct Quick Start}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include=FALSE}

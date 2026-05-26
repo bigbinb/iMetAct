@@ -38,6 +38,7 @@ getMetGenes
 Obtaining metabolism-related genes on the metabolic biological network by restarting the walk random algorithm
 }
 \examples{
+\dontrun{
 data(MetNetwork)
 data(metabolites)
 getMetGenes(network,
@@ -47,4 +48,5 @@ gamma = 0.7,
 tmax = 1000,
 eps = 1e-10,
 norm = TRUE)
+}
 }
